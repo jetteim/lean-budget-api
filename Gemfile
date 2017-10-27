@@ -4,8 +4,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 gem 'pg'
@@ -15,8 +13,6 @@ gem 'pundit'
 gem 'plutus'
 gem 'redis'
 gem 'jwt'
-
-
 
 group :profile, :development, :test do
   gem 'ruby-prof'

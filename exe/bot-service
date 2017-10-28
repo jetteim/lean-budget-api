@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+class BotService
+  require 'colorize'
+  require "#{File.expand_path('../../lib/telegram/', __FILE__)}/telegram_listener.rb"
+  require "#{File.expand_path('../../lib/telegram/', __FILE__)}/telegram_responder.rb"
+  require "#{File.expand_path('../../lib/telegram/', __FILE__)}/input_processor.rb"
+
+  TELEGRAM_TOKEN = '465826703:AAGyl640kAtVlUN4NMmm0eHkn_QifmLKJWc'.freeze
+
+  listener = TelegramListener.new(TELEGRAM_TOKEN)
+  processor = InputProcessor.new(TELEGRAM_TOKEN)
+  loop do
+    listener.updates_bundle.each { |user, input| processor.process_telegram(user, input) }
+  end
+end

@@ -13,6 +13,7 @@ gem 'pundit'
 gem 'plutus'
 gem 'redis'
 gem 'jwt'
+gem 'redis-rails'
 
 group :profile, :development, :test do
   gem 'ruby-prof'

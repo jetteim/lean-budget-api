@@ -14,6 +14,7 @@ gem 'rails'
 gem 'redis'
 gem 'redis-rails'
 gem 'thin'
+gem 'responders'
 
 group :profile, :development, :test do
   gem 'memory-profiler'

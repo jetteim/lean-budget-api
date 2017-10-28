@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
   include ActionController::Helpers
+  include ActionController::MimeResponds
+  require 'token'
 
   before_action :set_origin
   before_action :set_headers
@@ -78,6 +80,7 @@ class ApplicationController < ActionController::API
   end
 
   def header_token
-    request.headers['Authorization'].to_s.split.last
+    puts header_token = request.headers['Authorization'].to_s.split.last
+    header_token
   end
 end
